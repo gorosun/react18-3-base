@@ -15,9 +15,7 @@
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
       "prettier --write",
-      "eslint --fix"
-    ],
-    "**/*.test.{js,ts,jsx,tsx}": [
+      "eslint --fix",
       "pnpm exec vitest run --run"
     ]
   },
