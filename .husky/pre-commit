@@ -1,5 +1,9 @@
 #!/usr/bin/env sh
-pnpm exec lint-staged
+printf '\e[30;48;5;37m RUN \e[0m Show update src\n'
+git diff --name-only --cached | grep -E "src/.*\\.(js|jsx|ts|tsx)$" | sort | sed 's/.*/\x1b[90m &\x1b[0m/' && echo
 
-echo 'Vitest実行'
-pnpm run test run
+printf '\e[30;48;5;37m RUN \e[0m Lint fix\n'
+pnpm run lint:fix && echo
+
+printf '\e[30;48;5;37m RUN \e[0m Test\n'
+pnpm run test
