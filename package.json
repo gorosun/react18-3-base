@@ -10,7 +10,10 @@
     "coverage": "vitest run --coverage",
     "test": "vitest run",
     "lint": "eslint src",
-    "lint:fix": "pnpm exec lint-staged"
+    "lint:fix": "pnpm exec lint-staged",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "create:component": "node create-component.js"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
@@ -31,8 +34,19 @@
     "ui": "github:shadcn/ui"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.9.0",
     "@eslint/js": "^9.10.0",
     "@jridgewell/sourcemap-codec": "^1.5.0",
+    "@storybook/addon-essentials": "^8.3.1",
+    "@storybook/addon-interactions": "^8.3.1",
+    "@storybook/addon-links": "^8.3.1",
+    "@storybook/addon-onboarding": "^8.3.1",
+    "@storybook/blocks": "^8.3.1",
+    "@storybook/builder-vite": "^8.3.1",
+    "@storybook/experimental-addon-vitest": "8.3.0-beta.1",
+    "@storybook/react": "^8.3.1",
+    "@storybook/react-vite": "^8.3.1",
+    "@storybook/test": "^8.3.1",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",
     "@testing-library/user-event": "^14.5.2",
@@ -49,12 +63,15 @@
     "eslint-plugin-react": "^7.36.1",
     "eslint-plugin-react-hooks": "5.1.0-rc-fb9a90fa48-20240614",
     "eslint-plugin-react-refresh": "^0.4.9",
+    "eslint-plugin-storybook": "^0.8.0",
     "globals": "^15.9.0",
     "happy-dom": "^15.7.4",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "postcss": "^8.4.47",
     "prettier": "3.3.3",
+    "react-router-dom": "^6.26.2",
+    "storybook": "^8.3.1",
     "tailwindcss": "^3.4.11",
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.6.0",
