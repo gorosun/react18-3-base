@@ -15,8 +15,7 @@
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
       "prettier --write",
-      "eslint --fix",
-      "sh -c 'find src -name \"*.test.tsx\" | xargs pnpm exec vitest --run'"
+      "eslint --fix"
     ]
   },
   "dependencies": {

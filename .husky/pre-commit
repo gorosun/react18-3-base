@@ -1,2 +1,5 @@
 #!/usr/bin/env sh
 pnpm exec lint-staged
+
+echo 'Vitest実行'
+pnpm run test run
