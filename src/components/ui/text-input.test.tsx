@@ -1,4 +1,4 @@
-import { TextInput } from '@/components/ui/textInput';
+import { TextInput } from '@/components/ui/text-input';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
