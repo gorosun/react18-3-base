@@ -26,3 +26,5 @@ tsconfig.node.tsbuildinfo
 *.njsproj
 *.sln
 *.sw?
+
+*storybook.log

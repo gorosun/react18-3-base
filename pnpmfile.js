@@ -1,24 +1,27 @@
 module.exports = {
   hooks: {
     readPackage(pkg) {
-      // サブ依存関係のバージョンを上書き
-      if (pkg.dependencies) {
-        if (pkg.dependencies['@humanwhocodes/config-array']) {
-          pkg.dependencies['@humanwhocodes/config-array'] = '0.14.0';
+      const dependenciesToUpdate = {
+        '@humanwhocodes/config-array': '0.14.0',
+        '@humanwhocodes/object-schema': '2.1.0',
+        glob: '9.2.0',
+        inflight: '1.0.7',
+        rimraf: '4.1.2',
+      };
+
+      // Check all types of dependencies
+      ['dependencies', 'devDependencies', 'optionalDependencies'].forEach(
+        (depType) => {
+          if (pkg[depType]) {
+            Object.keys(dependenciesToUpdate).forEach((dep) => {
+              if (pkg[depType][dep]) {
+                pkg[depType][dep] = dependenciesToUpdate[dep];
+              }
+            });
+          }
         }
-        if (pkg.dependencies['@humanwhocodes/object-schema']) {
-          pkg.dependencies['@humanwhocodes/object-schema'] = '2.1.0';
-        }
-        if (pkg.dependencies['glob']) {
-          pkg.dependencies['glob'] = '9.2.0';
-        }
-        if (pkg.dependencies['inflight']) {
-          pkg.dependencies['inflight'] = '1.0.7';
-        }
-        if (pkg.dependencies['rimraf']) {
-          pkg.dependencies['rimraf'] = '4.1.2';
-        }
-      }
+      );
+
       return pkg;
     },
   },
