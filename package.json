@@ -17,8 +17,8 @@
       "prettier --write",
       "eslint --fix"
     ],
-    "src/**/*.test.{js,ts,jsx,tsx}": [
-      "pnpm exec vitest run"
+    "**/*.test.{js,ts,jsx,tsx}": [
+      "pnpm exec vitest run --run"
     ]
   },
   "dependencies": {
