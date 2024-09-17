@@ -12,6 +12,12 @@
     "test": "vitest run",
     "coverage": "vitest run --coverage"
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
   "dependencies": {
     "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/react-slot": "^1.1.0",
