@@ -13,9 +13,12 @@
     "coverage": "vitest run --coverage"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
+    "src/**/*.{js,jsx,ts,tsx}": [
       "prettier --write",
       "eslint --fix"
+    ],
+    "src/**/*.test.{js,ts,jsx,tsx}": [
+      "pnpm run test"
     ]
   },
   "dependencies": {
