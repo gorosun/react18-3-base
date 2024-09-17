@@ -18,6 +18,8 @@ export default defineConfig({
     sourcemap: false, // ソースマップの生成を無効化
   },
   test: {
+    include: ['src/**/*.{test,spec}.{js,ts,jsx,tsx}'],
+    exclude: ['**/node_modules/**', '**/dist/**', '**/cypress/**'],
     globals: true, // グローバルにテストユーティリティを提供
     environment: "happy-dom", // 仮想DOMを使用することでブラウザの動作をエミュレート
     setupFiles: ["./vitest-setup.ts"], // テスト前のsetupファイルを指定
