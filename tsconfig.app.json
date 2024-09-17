@@ -24,7 +24,8 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "types": ["vitest/globals"] // 追加
   },
-  "include": ["src"]
+  "include": ["src", "./vitest-setup.ts"] // srcの外にあるsetupファイルもコンパイル対象に追加
 }
