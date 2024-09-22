@@ -1,6 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .logo {
+    @apply h-24 p-6 transition duration-300; /* 変更: `transition-filter` を削除し、 `transition` を使用 */
+    will-change: filter; /* 変更はそのまま */
+  }
+  .logo:hover {
+    @apply drop-shadow-logo; /* カスタムのdrop-shadowを適用 */
+  }
+  .logo.react:hover {
+    @apply drop-shadow-logo-react; /* カスタムのReact用drop-shadowを適用 */
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -27,7 +41,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem
+    --radius: 0.5rem;
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -53,7 +67,7 @@
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%
+    --chart-5: 340 75% 55%;
   }
 }
 @layer base {
